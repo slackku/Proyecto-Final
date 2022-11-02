@@ -4,24 +4,92 @@
   border: 0;
 }
 
+@import url(color.css);
+
+h1,
+h2,
+h3,
+span,
+a,
+p {
+  font-family: "Rubik", sans-serif;
+}
+
 body {
-  background-color: #0e141b;
+  background-color: var(--c10);
 }
 
 h1 {
-  color: white;
+  color: var(--white);
+  font-size: 1.3em;
+  margin: auto 0;
 }
 
-#cc-contnr::after {
+.cc-contnr {
+  display: flex;
+  width: 100%;
+  border-bottom: 1px solid var(--borders);
+  justify-content: space-between;
+}
+
+.logo-title-item,
+.button-section {
+  display: flex;
+  text-decoration: none;
+  padding: 0.6em;
+  gap: 0.3em;
+}
+
+.button-section > div {
+  padding: 0 1em;
+}
+
+.separeted {
+  border-left: 1px solid var(--borders);
+  border-right: 1px solid var(--borders);
+}
+
+.session-btn,
+.style-chng {
+  text-decoration: none;
+  color: var(--white);
+  padding: 0.7em;
+}
+
+.session-btn {
+  border: 1px solid var(--borders);
+  border-radius: 4px;
+}
+
+.session-btn:hover,
+.style-chng:hover {
+  background: var(--borders);
+  color: var(--white);
+}
+
+.style-chng:hover {
+  border-radius: 50% 50%;
+}
+
+.logo-title-item > img {
+  height: 100%;
+  margin: auto;
+}
+
+.cc-contnr > div {
+  margin: auto 0;
+}
+
+.cc-contnr::after {
   background-image: linear-gradient(
     -225deg,
-    #0a0a0a 0%,
-    #570db1 60%,
-    #3505b1 100%
+    var(--c10) 0%,
+    var(--purp1) 60%,
+    var(--purp3) 100%
   );
   position: absolute;
   content: "";
-  top: 15%;
+  top: 0;
   left: 0;
   right: 0;
   bottom: 0;
@@ -29,13 +97,12 @@ h1 {
   width: 100%;
   margin: 0 auto;
   z-index: -1;
-  filter: blur(30px);
+  filter: blur(50px);
   background-size: 400%;
   animation: gradient 20s ease infinite;
 }
 
 .cc-color-other {
-  background-image: linear-gradient(to left, #2af598 0%, #009efd 100%);
   background-size: 400%;
   animation: gradient 20s ease infinite;
 }
@@ -43,9 +110,9 @@ h1 {
 .cc-color {
   background-image: linear-gradient(
     -225deg,
-    #0a0a0a 0%,
-    #570db1 60%,
-    #3505b1 100%
+    var(--c10) 0%,
+    var(--purp1) 60%,
+    var(--purp3) 100%
   );
   background-size: 400%;
   animation: gradient 20s ease infinite;
