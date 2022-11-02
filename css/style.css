@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+  background-color: #0e141b;
+}
+
+h1 {
+  color: white;
+}
+
+#cc-contnr::after {
+  background-image: linear-gradient(
+    -225deg,
+    #0a0a0a 0%,
+    #570db1 60%,
+    #3505b1 100%
+  );
+  position: absolute;
+  content: "";
+  top: 15%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 40px;
+  width: 100%;
+  margin: 0 auto;
+  z-index: -1;
+  filter: blur(30px);
+  background-size: 400%;
+  animation: gradient 20s ease infinite;
+}
+
+.cc-color-other {
+  background-image: linear-gradient(to left, #2af598 0%, #009efd 100%);
+  background-size: 400%;
+  animation: gradient 20s ease infinite;
+}
+
+.cc-color {
+  background-image: linear-gradient(
+    -225deg,
+    #0a0a0a 0%,
+    #570db1 60%,
+    #3505b1 100%
+  );
+  background-size: 400%;
+  animation: gradient 20s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
