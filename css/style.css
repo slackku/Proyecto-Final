@@ -16,7 +16,7 @@ p {
 }
 
 body {
-  background-color: var(--c10);
+  background-color: var(--purp6);
 }
 
 h1 {
@@ -116,6 +116,50 @@ h1 {
   );
   background-size: 400%;
   animation: gradient 20s ease infinite;
+}
+
+.banner {
+  position: relative;
+  background-image: linear-gradient(
+      180deg,
+      rgba(71, 40, 134, 0.452) 1%,
+      rgba(0, 0, 0, 0) 51%
+    ),
+    url("../img/banner-sample.png");
+  background-size: cover;
+  background-position: center left;
+  height: 20em;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+main {
+  padding: 2em;
+}
+
+.img-banner {
+  position: absolute;
+  top: 320px;
+  left: 70px;
+  right: 0;
+  width: 150px;
+  height: 150px;
+}
+
+.img-banner img {
+  width: 150px;
+  border-radius: 50%;
+  border: 3px solid var(--white);
+}
+
+.img-banner::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 150px;
+  height: 150px;
+  z-index: -1;
+  border-radius: 50%;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 4px 8px 0px;
 }
 
 @keyframes gradient {
