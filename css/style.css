@@ -125,6 +125,7 @@ h1 {
       rgba(71, 40, 134, 0.452) 1%,
       rgba(0, 0, 0, 0) 51%
     ),
+    linear-gradient(0deg, rgba(71, 40, 134, 0.452) 1%, rgba(0, 0, 0, 0) 51%),
     url("../img/banner-sample.png");
   background-size: cover;
   background-position: center left;
