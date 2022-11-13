@@ -7,3 +7,12 @@ soyyo.addEventListener("click", function () {
   as.classList.add("cc-color-other");
   as.classList.remove("cc-color");
 });
+window.addEventListener("resize", function () {
+  //Actualiza el tamaño de la clase all
+  //con respecto al tamaño del disp
+  let w = window.innerWidth;
+  let divs = document.querySelectorAll(".all");
+  divs.forEach((element) => {
+    element.setAttribute("width", w);
+  });
+});
