@@ -13,6 +13,6 @@ window.addEventListener("resize", function () {
   let w = window.innerWidth;
   let divs = document.querySelectorAll(".all");
   divs.forEach((element) => {
-    element.setAttribute("width", w);
+    element.setAttribute("width", w - 32);
   });
 });
