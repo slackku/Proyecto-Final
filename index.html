@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/color.css">
     <title>Portfolio FrontEnd</title>
@@ -16,15 +19,51 @@
     <nav class="cc-color cc-contnr">
         <div class="logo-title-section">
             <a class="logo-title-item" href="">
-                <img src="img/asd.png" alt="Argentina Programa">
+                <img src="img/asd.png" alt="Argentina Programa" class="logardo">
                 <h1>#YoProgramo</h1>
             </a>
         </div>
         <div class="button-section">
-            <div class="separeted">
-                <a class="style-chng" id="styles-btt" href="#">
-                    <i class="fa-sharp fa-solid fa-palette"></i>
-                </a>
+            <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
+                aria-controls="offcanvasWithBothOptions" data-trigger="hover"><i
+                    class="fa-sharp fa-solid fa-palette"></i></button>
+
+            <div class="custom offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1"
+                id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Cambiar estilo</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <p>Elige una para cambiar el diseño de toda la página.</p>
+                    <section id="container-btt" class="active">
+                        <div class="content" style="max-height: 138px;">
+                            <fieldset class="some2">
+                                <div class="rad-cont">
+                                    <label for="dark">DARK</label>
+                                    <input type="radio" name="a" id="dark" checked="">
+                                </div>
+                                <div class="rad-cont">
+                                    <label for="light">LIGHT</label>
+                                    <input type="radio" name="a" id="light">
+                                </div>
+                                <div class="rad-cont">
+                                    <label for="cyber">CYBER</label>
+                                    <input type="radio" name="a" id="cyber">
+                                </div>
+                                <div class="rad-cont">
+                                    <label for="baroque">BAROQ</label>
+                                    <input type="radio" name="a" id="baroque">
+                                </div>
+                                <div class="rad-cont">
+                                    <label for="surprise">???</label>
+                                    <input type="radio" name="a" id="surprise">
+                                </div>
+                            </fieldset>
+                        </div>
+                    </section>
+                </div>
             </div>
             <div>
                 <a class="btn" href="#">Login</a>
@@ -44,26 +83,34 @@
                 </div>
                 <section class="information">
                     <section class="info">
-                        <h3>SLACK SLACK</h3>
-                        <p>Soy la profecion</p>
-                        <p>Where im i</p>
+                        <div>
+                            <h3>SLACK SLACK</h3>
+                            <p>Soy la profecion</p>
+                            <p>Where im i</p>
+                        </div>
+                        <section>
+                            <img src="img/logo.png" alt="" class="img">
+                        </section>
                     </section>
                     <section class="btt-sect">
-                        <a class="btn" href="#">Tengo interés en</a>
-                        <a class="btn" href="#">Añadir seccion</a>
-                        <div style="display: block;">
-                            <li style="list-style: none;">
-                                <a class="btn" href="#">Más</a>
-                                <div style="background-color: white;">
-                                    <a href="">Algo</a>
-                                    <a href="">Mas</a>
-                                </div>
-                            </li>
+                        <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                            <button type="button" class="btn">Tengo interes en</button>
+                            <button type="button" class="btn">Añadir Seccion</button>
+
+                            <div class="btn-group" role="group">
+                                <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown"
+                                    aria-expanded="false" alt="Desplegable">
+                                    Más
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Opcion 1</a></li>
+                                    <li><a class="dropdown-item" href="#">Opcion 2</a></li>
+                                </ul>
+                            </div>
                         </div>
+
                     </section>
-                    <section>
-                        <img src="img/asd.png" alt="">
-                    </section>
+
                 </section>
             </section>
 
