@@ -13,7 +13,7 @@ Now, having this in mind, i'll set some challenges to me.
     
     3- Have a better understanding of the relative, absolute positions
     
-    4- Evolve some bad habits of do the things without understanding why some things are happening
+    4- Evolve some bad habits of doing the things without understanding why some things are happening
 
 Also it is worth saying that this project its going to be the final handover of a programming course that i'm making. ;P
 
