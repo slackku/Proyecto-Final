@@ -9,7 +9,7 @@ Now, having this in mind, i'll set some challenges to me.
 
     1- Develop a way to change the style of the hole site
  
-    2- Make at least 3 different variants of the style
+    2- Make at least 3 different variants of the web style
     
     3- Have a better understanding of the relative, absolute positions
     
@@ -19,6 +19,6 @@ Also it is worth saying that this project its going to be the final handover of 
 
 ## Technologies:
 - HTML (lit easy, but a start its a start)
-- CSS3
+- CSS3 (Boostrap Framework and raw CSS)
     
 Some others would be added or even deleted while the project evolves.
