@@ -1,18 +1,18 @@
-//Experimentos con EventListener. (A tener en cuenta para la funcionalidad de multiple estilo)
-//
-const soyyo = document.getElementById("styles-btt");
-const background = document.getElementById("cc-contnr");
-
-soyyo.addEventListener("click", function () {
-  as.classList.add("cc-color-other");
-  as.classList.remove("cc-color");
-});
 window.addEventListener("resize", function () {
-  //Actualiza el tamaño de la clase all
-  //con respecto al tamaño del disp
-  let w = window.innerWidth;
-  let divs = document.querySelectorAll(".all");
-  divs.forEach((element) => {
-    element.setAttribute("width", w - 32);
-  });
+  var image = document.querySelector(".logardo");
+  if (window.innerWidth < 600) {
+    image.src = "img/asdmini.png";
+  }
+  let text = document.querySelectorAll(".btn-group .btn");
+  if (this.window.innerWidth < 520) {
+    text[0].innerHTML = "Intereses";
+    text[1].innerHTML = "Añadir";
+    text[2].innerHTML = "Más";
+  }
+  if (this.window.innerWidth > 520) {
+    text[0].innerHTML = "Tengo interes en";
+    text[1].innerHTML = "Añadir Seleccion";
+    text[2].innerHTML = "Más";
+    image.src = "img/asd.png";
+  }
 });
