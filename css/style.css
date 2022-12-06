@@ -19,7 +19,7 @@ p {
 }
 
 body {
-  background-color: var(--c10);
+  background-color: var(--neutral);
 }
 
 h1 {
@@ -31,7 +31,7 @@ h1 {
 .cc-contnr {
   display: flex;
   width: 100%;
-  border-bottom: 1px solid var(--borders);
+  border-bottom: 1px solid var(--dborder);
   justify-content: space-between;
 }
 
@@ -48,8 +48,8 @@ h1 {
 }
 
 .separeted {
-  border-left: 1px solid var(--borders);
-  border-right: 1px solid var(--borders);
+  border-left: 1px solid var(--dborder);
+  border-right: 1px solid var(--dborder);
   margin: auto;
 }
 
@@ -57,7 +57,7 @@ h1 {
 .style-chng {
   text-decoration: none;
   color: var(--white);
-  border: 1px solid var(--borders);
+  border: 1px solid var(--dborder);
 }
 
 .style-chng {
@@ -71,7 +71,7 @@ h1 {
 
 .btn:hover,
 .style-chng:hover {
-  background: var(--borders);
+  background: var(--dborder);
   color: var(--white);
   text-shadow: 0px 0px 5px var(--white);
 }
@@ -88,7 +88,7 @@ h1 {
 .cc-contnr::after {
   background-image: linear-gradient(
     -225deg,
-    var(--c10) 0%,
+    var(--neutral) 0%,
     var(--purp1) 60%,
     var(--purp3) 100%
   );
@@ -115,11 +115,11 @@ h1 {
 .cc-color {
   /* background-image: linear-gradient(
     -225deg,
-    var(--c10) 0%,  GRADIENT
+    var(--neutral) 0%,  GRADIENT
     var(--purp1) 60%,
     var(--purp3) 100%
   ); */
-  background-color: var(--c10);
+  background-color: var(--neutral);
   background-size: 400%;
   /* animation: gradient 20s ease infinite; Nav color animation*/
 }
@@ -150,7 +150,7 @@ main > * {
 .about,
 .experience,
 .education {
-  border: 1px solid var(--borders);
+  border: 1px solid var(--dborder);
   border-radius: 5px 5px 5px 5px;
   color: var(--white);
   padding: 2em;
@@ -182,19 +182,17 @@ main > * {
 
 .profileimg-banner {
   position: absolute;
-  top: 320px;
+  top: 330px;
   left: 70px;
   right: 0;
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  border: 7px solid var(--c10);
-  width: 150px;
-  height: 150px;
+  border: 7px solid var(--neutral);
 }
 
 .wrapper {
-  border: 1px solid var(--borders);
+  border: 1px solid var(--dborder);
   border-radius: 5px;
 }
 
@@ -231,18 +229,17 @@ main > * {
 
 /*CAMBIOS*/
 
-.some {
-  border: 1px solid red;
-  position: relative;
+.some2 {
+  width: 200px;
   display: flex;
-  gap: 2px;
-  width: 70px;
+  flex-direction: column;
+  margin: auto;
+  gap: 10px;
 }
 
 .rad-cont {
   font-weight: bold;
   text-align: center;
-  margin-top: 6px;
 }
 
 input[type="radio"] {
@@ -252,7 +249,7 @@ input[type="radio"] {
   overflow: hidden;
   position: absolute;
   white-space: nowrap;
-  width: 10px;
+  width: 1px;
 }
 
 .rad-cont label {
@@ -260,47 +257,43 @@ input[type="radio"] {
   padding: 1.1rem;
   width: 100%;
   color: var(--white);
-  border: 1px solid var(--borders);
+  border: 1px solid var(--secundary);
   border-radius: 5px;
 }
 
 .rad-cont label:hover {
   border-radius: 5px;
-  background-color: var(--borders);
-}
-
-.some > * {
-  width: fit-content;
+  background-color: var(--dborder);
 }
 
 .rad-cont:has(#dark:checked) {
-  background-color: var(--borders);
-  border-radius: 6px;
+  background-color: var(--dborder);
   text-shadow: 0px 0px 5px var(--white);
+  border-color: var(--primary);
 }
 .rad-cont:has(#light:checked) {
-  background-color: var(--borders);
-  border-radius: 6px;
+  background-color: var(--dborder);
   text-shadow: 0px 0px 5px var(--white);
+  border-color: var(--primary);
 }
 .rad-cont:has(#cyber:checked) {
-  background-color: var(--borders);
-  border-radius: 6px;
+  background-color: var(--dborder);
   text-shadow: 0px 0px 5px var(--white);
+  border-color: var(--primary);
 }
 .rad-cont:has(#baroque:checked) {
-  background-color: var(--borders);
-  border-radius: 6px;
+  background-color: var(--dborder);
   text-shadow: 0px 0px 5px var(--white);
+  border-color: var(--primary);
 }
 .rad-cont:has(#surprise:checked) {
-  background-color: var(--borders);
-  border-radius: 6px;
+  background-color: var(--dborder);
   text-shadow: 0px 0px 5px var(--white);
+  border-color: var(--primary);
 }
 
 .custom {
-  background-color: var(--c10);
+  background-color: rgb(35, 33, 47,.98);
 }
 
 .dropbox-item:focus {
@@ -314,9 +307,12 @@ input[type="radio"] {
 
 .img {
   height: fit-content;
-  height: 40px;
+  height: 45px;
+  border: 1px solid var(--dborder);
+  border-radius: 5px;
+  padding: .3em;
 }
 
-.drowpdown-item:active {
-  background-color: red !important;
+.dropdown-item{
+  --bs-dropdown-link-active-bg: red; /*Dropdown item active propieties*/
 }
