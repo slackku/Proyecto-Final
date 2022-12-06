@@ -18,7 +18,7 @@ Now, having this in mind, i'll set some challenges to me.
 Also it is worth saying that this project its going to be the final handover of a programming course that i'm making. ;P
 
 ## Technologies:
-- HTML (lit easy, but a start its a start)
+- HTML (lil easy, but a start its a start)
 - CSS3 (Boostrap Framework and raw CSS)
     
 Some others would be added or even deleted while the project evolves.
