@@ -1,27 +1,27 @@
 # PortfolioFrontEnd
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.2.
+ 
+This is going to be my first try on what i would call, the website development journey.
 
-## Development server
+The main idea on this project it's kind of basic, a portfolio that would contain all my abilities, knowledge, and more (all in this learn and try to do adventure).
+Now, having this in mind, i'll set some challenges to me.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Challenges:
 
-## Code scaffolding
+    1- Develop a way to change the style of the hole site
+ 
+    2- Make at least 3 different variants of the web style
+    
+    3- Have a better understanding of the relative, absolute positions
+    
+    4- Evolve some bad habits of doing the things without understanding why some things are happening
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Also it is worth saying that this project its going to be the final handover of a programming course that i'm making. ;P
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Technologies:
+- HTML (lil easy, but a start its a start)
+- CSS3 (Boostrap Framework and raw CSS)
+- Angular CLI
+    
+Some others would be added or even deleted while the project evolves.
