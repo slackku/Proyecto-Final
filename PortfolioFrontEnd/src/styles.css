@@ -1,0 +1,86 @@
+:root {
+  --neutral: #0d0d0d;
+  --primary: #ff053f;
+  --secundary: #00e5b0;
+  --neutralaccent: #242130;
+  --white: #fcfcfc;
+
+  /*HOVER/ACTIVE Ver*/
+  --ohawh: #fcfcfc9a;
+  --ohasec: #00e5b01a;
+  --ohaprim: #ff053f1a;
+  /* */
+  /*BORDERS*/
+  --dborder: #ffffff1a;
+  --bborder: #0000001a;
+  /* */
+  /*--FONTS/bootstrap--*/
+  --bs-body-font-family: "Inter", sans-serif !important;
+}
+
+h3 {
+  font-weight: 600 !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+i,
+.dropdown-item,
+.btn {
+  color: var(--white) !important;
+}
+
+.btn-edit:hover i{
+  transform: scale(1.07);
+}
+
+body,
+.dropdown-menu {
+  background-color: var(--neutral) !important;
+}
+
+.border-c-gc > * > * {
+  border: 1px solid var(--dborder);
+  border-radius: 5px;
+}
+
+.cont-padd {
+  padding: 2em;
+}
+
+.btn,
+.dropdown-menu {
+  border: 1px solid var(--dborder) !important;
+}
+
+.btn:hover {
+  background-color: var(--dborder) !important;
+}
+
+.dropdown-item {
+  --bs-dropdown-link-active-bg: var(--ohasec);
+  --bs-dropdown-link-hover-bg: var(--dborder);
+}
+
+.dropdown-item:active {
+  color: var(--ohawh) !important;
+}
+
+.btn-gr {
+  border-color: var(--secundary) !important;
+  color: var(--secundary) !important;
+}
+
+.btn-gr:hover {
+  background-color: var(--ohasec) !important;
+  box-shadow: var(--ohasec) 0px 0px 10px 0px;
+}
+
+.btn-edit {
+  background-color: unset;
+  border: unset;
+  width: fit-content;
+}
