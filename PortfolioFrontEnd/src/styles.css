@@ -15,16 +15,39 @@
   --bborder: #0000001a;
   /* */
   /*--FONTS/bootstrap--*/
-  --bs-body-font-family: "Inter", sans-serif !important;
+  --bs-body-font-family: "Mona-Sans";
 }
 
-*,
+@font-face {
+  font-family: "Hubot-Sans-EBWI";
+  src: url("assets/font/Hubot-Sans-ExtraBoldWideItalic.ttf");
+}
+
+@font-face {
+  font-family: "Mona-Sans";
+  src: url("assets/font/Mona-Sans-Medium.ttf");
+}
+
+html *,
 [type="button"] {
   cursor: none !important;
 }
 
 h3 {
   font-weight: 600 !important;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Hubot-Sans-EBWI";
+}
+
+p,
+button,
+a {
+  font-family: "Mona-Sans";
 }
 
 h1,
@@ -88,4 +111,9 @@ body,
   background-color: unset;
   border: unset;
   width: fit-content;
+}
+
+button:hover ~ .cursor,
+[type="button"]:hover ~ .cursor {
+  transform: scale(2.5);
 }

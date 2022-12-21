@@ -20,9 +20,15 @@ a:hover {
 .navbar-brand {
   display: flex;
   flex-direction: row;
- 
 }
 
-.navbar-brand p{
+.navbar-brand p {
   margin: auto;
+  font-family: "Hubot-Sans-EBWI";
+}
+
+@media (max-width: 350px) {
+  p.etapa{
+    display: none !important;
+  }
 }

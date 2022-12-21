@@ -1,5 +1,5 @@
 @media (min-width: 950px) {
-  .cursor {
+  #cursor {
     position: fixed;
     background: var(--white);
     pointer-events: none;
@@ -8,5 +8,33 @@
     mix-blend-mode: difference;
     border-radius: 50%;
     z-index: 10000;
+  }
+
+  .normal {
+    animation: deblob 0.3s;
+    transform: scale(1);
+  }
+
+  .ontext {
+    animation: blob 0.3s;
+    transform: scale(2);
+  }
+
+  @keyframes deblob {
+    from {
+      transform: scale(2);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes blob {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(2);
+    }
   }
 }
