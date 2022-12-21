@@ -1,0 +1,12 @@
+@media (min-width: 950px) {
+  .cursor {
+    position: fixed;
+    background: var(--white);
+    pointer-events: none;
+    width: 20px;
+    height: 20px;
+    mix-blend-mode: difference;
+    border-radius: 50%;
+    z-index: 10000;
+  }
+}

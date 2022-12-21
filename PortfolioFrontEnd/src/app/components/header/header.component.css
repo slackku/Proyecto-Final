@@ -16,3 +16,13 @@ a {
 a:hover {
   color: white;
 }
+
+.navbar-brand {
+  display: flex;
+  flex-direction: row;
+ 
+}
+
+.navbar-brand p{
+  margin: auto;
+}

@@ -18,6 +18,11 @@
   --bs-body-font-family: "Inter", sans-serif !important;
 }
 
+*,
+[type="button"] {
+  cursor: none !important;
+}
+
 h3 {
   font-weight: 600 !important;
 }
@@ -33,7 +38,7 @@ i,
   color: var(--white) !important;
 }
 
-.btn-edit:hover i{
+.btn-edit:hover i {
   transform: scale(1.07);
 }
 
