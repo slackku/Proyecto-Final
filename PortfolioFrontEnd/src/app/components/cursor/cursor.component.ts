@@ -17,16 +17,13 @@ export class CursorComponent {
       cursor.style.display = 'block';
     });
 
-    document.addEventListener('mouseout', () => {
-      cursor.style.display = 'none';
-    });
+    // document.addEventListener('mouseout', () => {
+    //   cursor.style.display = 'none';
+    // });
 
     const btns_edit = document.getElementsByClassName('btn-edit');
     const links = document.querySelector('a') as HTMLElement;
     const btns = document.getElementsByClassName('btn');
-
-    console.log(btns_edit);
-    console.log(links);
 
     links.addEventListener('mouseenter', () => {
       cursor.classList.toggle('normal');
