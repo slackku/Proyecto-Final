@@ -107,6 +107,16 @@ body,
   box-shadow: var(--ohasec) 0px 0px 10px 0px;
 }
 
+.btn-rd {
+  border-color: var(--primary) !important;
+  color: var(--primary) !important;
+}
+
+.btn-rd:hover {
+  background-color: var(--ohaprim) !important;
+  box-shadow: var(--ohaprim) 0px 0px 10px 0px;
+}
+
 .btn-edit {
   background-color: unset;
   border: unset;
