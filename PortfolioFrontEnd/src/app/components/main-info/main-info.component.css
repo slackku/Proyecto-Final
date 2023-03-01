@@ -67,14 +67,15 @@
 }
 
 .sprof span {
-  background: linear-gradient(90deg, transparent, var(--primary));
+  background: linear-gradient(60deg, transparent, var(--primary));
   border-radius: 5px;
   padding: 5px;
   padding-left: 0;
 }
 
-.swhr span{
+.swhr{
   color: rgb(241, 241, 241);
+  padding-top: .3em;
 }
 
 @media (max-width: 767px) {
