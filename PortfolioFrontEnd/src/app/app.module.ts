@@ -11,6 +11,7 @@ import { ExperienciaComponent } from './components/experiencia/experiencia.compo
 import { EducacionComponent } from './components/educacion/educacion.component';
 import { StyleBtnComponent } from './components/style-btn/style-btn.component';
 import { CursorComponent } from './components/cursor/cursor.component';
+import { LogoutComponent } from './components/logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { CursorComponent } from './components/cursor/cursor.component';
     EducacionComponent,
     StyleBtnComponent,
     CursorComponent,
+    LogoutComponent,
   ],
   imports: [
     BrowserModule,
