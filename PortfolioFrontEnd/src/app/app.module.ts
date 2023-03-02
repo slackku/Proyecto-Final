@@ -12,6 +12,7 @@ import { EducacionComponent } from './components/educacion/educacion.component';
 import { StyleBtnComponent } from './components/style-btn/style-btn.component';
 import { CursorComponent } from './components/cursor/cursor.component';
 import { LogoutComponent } from './components/logout/logout.component';
+import { StylingToolComponent } from './components/styling-tool/styling-tool.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { LogoutComponent } from './components/logout/logout.component';
     StyleBtnComponent,
     CursorComponent,
     LogoutComponent,
+    StylingToolComponent,
   ],
   imports: [
     BrowserModule,
