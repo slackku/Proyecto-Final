@@ -17,40 +17,34 @@ export class CursorComponent {
       cursor.style.display = 'block';
     });
 
-    // document.addEventListener('mouseout', () => {
-    //   cursor.style.display = 'none';
-    // });
-
     const btns_edit = document.getElementsByClassName('btn-edit');
     const links = document.querySelector('a') as HTMLElement;
     const btns = document.getElementsByClassName('btn');
+    const colorSph = document.getElementsByClassName('colorSph');
 
-    links.addEventListener('mouseenter', () => {
+    this.eloHtmlColection(colorSph, cursor);
+    this.eloHtmlColection(btns_edit, cursor);
+    this.eloHtmlColection(btns, cursor);
+    this.eloHtmlElement(links, cursor);
+  }
+  
+  eloHtmlElement(htmlE: HTMLElement, cursor: HTMLElement) { //Event Listener on a HTMLElement
+    htmlE.addEventListener('mouseenter', () => {
       cursor.classList.toggle('normal');
       cursor.classList.add('ontext');
     });
-
-    links.addEventListener('mouseleave', () => {
+    htmlE.addEventListener('mouseleave', () => {
       cursor.classList.toggle('ontext');
       cursor.classList.add('normal');
     });
-
-    for (let i = 0; i < btns_edit.length; i++) {
-      btns_edit[i].addEventListener('mouseenter', () => {
+  }
+  eloHtmlColection(htmlC: HTMLCollection, cursor: HTMLElement) { //Event Listener on a HTMLCollection
+    for (var i = 0; i < htmlC.length; i++) {
+      htmlC[i].addEventListener('mouseenter', () => {
         cursor.classList.toggle('normal');
         cursor.classList.add('ontext');
       });
-      btns_edit[i].addEventListener('mouseleave', () => {
-        cursor.classList.toggle('ontext');
-        cursor.classList.add('normal');
-      });
-    }
-    for (let i = 0; i < btns.length; i++) {
-      btns[i].addEventListener('mouseenter', () => {
-        cursor.classList.toggle('normal');
-        cursor.classList.add('ontext');
-      });
-      btns[i].addEventListener('mouseleave', () => {
+      htmlC[i].addEventListener('mouseleave', () => {
         cursor.classList.toggle('ontext');
         cursor.classList.add('normal');
       });
