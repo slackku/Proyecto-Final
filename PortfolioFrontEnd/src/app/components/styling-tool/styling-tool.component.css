@@ -1,0 +1,82 @@
+.contenedor {
+  display: flex;
+  position: fixed;
+  bottom: calc(5vh - 14px);
+  left: calc(2vw);
+  background-color: hsla(0, 0%, 100%, 0.01);
+  backdrop-filter: blur(2px);
+  border: 1px solid var(--dborder);
+}
+
+.unpressed {
+  border-radius: 50%;
+}
+
+.pressed {
+  width: 240px;
+  border-radius: 23px;
+}
+
+.pressed i.open, .unpressed i.close{
+  display: none;
+  transition: display 2s ease-in-out;
+}
+
+.colorBlack {
+  background-color: #0d0d0d;
+  border: 1px solid var(--dborder);
+}
+
+.colorGray {
+  background-color: gray;
+}
+
+.colorWhite {
+  background-color: white;
+  border: 1px solid var(--bborder);
+}
+
+.colorGoldyB {
+  background: linear-gradient(to right, gold 50%, black 50%);
+}
+
+.colorArea div {
+  border-radius: 50%;
+  width: 1.7em;
+  height: 1.7em;
+  margin-left: 0.7em;
+}
+
+.pressed.colorArea div {
+  position: absolute;
+}
+
+.btn-st i {
+  display: flex;
+}
+
+.btn-st {
+  border: none !important;
+  border-radius: 50%;
+  font-size: 2em;
+  position: relative;
+  padding: 5px;
+}
+
+.color-List {
+  display: flex;
+  list-style: none;
+  vertical-align: middle;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 17%;
+  left: 0;
+  width: 0;
+  overflow: hidden;
+}
+
+.pressed .color-List {
+  left: 15%;
+  width: fit-content;
+}
