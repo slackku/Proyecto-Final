@@ -1,7 +1,7 @@
 @media (min-width: 950px) {
   #cursor {
     position: fixed;
-    background: var(--white);
+    background: white;
     pointer-events: none;
     width: 20px;
     height: 20px;
