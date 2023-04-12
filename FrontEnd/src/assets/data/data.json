@@ -1,0 +1,34 @@
+{
+    "mainInfo": {
+        "name": "Ignacio Lorenzo",
+        "profilePicture": "./assets/img-sample.jpg",
+        "bannerImage":"./assets/banner-sample.png",
+        "position": "Full stack Developer Jr.",
+        "location": "Tucumán",
+        "country": "Argentina"
+    },
+    "about": "lorem impsum",
+    "education": {
+        "highschool": {
+            "name": "Instituto San Miguel",
+            "img": "some",
+            "url": "#",
+            "orientation": "Humanidades",
+            "state": "Terminado"
+        },
+        "university": {
+            "name": "Universidad Nacional de Tucumán",
+            "img": "some",
+            "url": "#",
+            "career": "Programador Universitario",
+            "state": "Cursando"
+        }
+    },
+    "experience":{
+        "example-1":{
+            "companyName":"Sample Name",
+            "position":"Senior Sample Position",
+            "some":"some"
+        }
+    }
+}

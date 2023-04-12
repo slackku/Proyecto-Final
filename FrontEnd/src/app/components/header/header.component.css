@@ -1,0 +1,29 @@
+.navbar,
+.navbar-brand {
+  padding: unset;
+  margin: unset;
+}
+
+.navbar {
+  border-bottom: 1px solid var(--cborder) !important;
+}
+
+a {
+  font-size: 1.3em;
+}
+
+.navbar-brand {
+  display: flex;
+  flex-direction: row;
+}
+
+.navbar-brand p {
+  margin: auto;
+  font-family: "Hubot-Sans-EBWI";
+}
+
+@media (max-width: 365px) {
+  p.etapa{
+    display: none !important;
+  }
+}
