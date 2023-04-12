@@ -1,21 +1,73 @@
 :root {
   --neutral: #0d0d0d;
+  --cfont: #fcfcfc;
+  --cborder: #ffffff1a;
+  --cfilterBW: none;
+
   --primary: #ff053f;
   --secundary: #00e5b0;
-  --neutralaccent: #242130;
-  --white: #fcfcfc;
 
-  /*HOVER/ACTIVE Ver*/
-  --ohawh: #fcfcfc9a;
-  --ohasec: #00e5b01a;
-  --ohaprim: #ff053f1a;
-  /* */
-  /*BORDERS*/
+  /*-- Neutral Colors --*/
+  --cwhite: #fcfcfc;
+  --cblack: #0d0d0d;
+  --cgreen: #0d1811;
+  --ccharcoal: #36454f;
+  --cpink: #bfa3aa;
+
+  /* Image Filters for each different color style*/
+  /* This ones are only tested and created only for white images.*/
+  /* So theres no actual knowledge if works propperly on other colored images*/
+
+  /* Pink Filter*/
+  --pfilter: brightness(26%) sepia(1) saturate(202%) hue-rotate(-73deg);
+
+  /* Charcoal Filter*/
+  --cCfilter: brightness(59%) sepia(1) saturate(45%) hue-rotate(175deg);
+
+  /* Green Filter*/
+  --gfilter: brightness(35%) sepia(1) saturate(540%) hue-rotate(95deg);
+
+  /*-- Color Font -- WCAG AA Checked*/
+
+  --charcoalfont: #adbbc7;
+  --pinkfont: #764753;
+  --greenfont: #109345;
+
+  /*-- Borders --*/
+  /**/
   --dborder: #ffffff1a;
-  --bborder: #0000001a;
-  /* */
+  --bborder: #00000052;
+  --pborder: #b28590;
+  --gborder: #0c7235;
+
+  /*-- Primarys/Secondarys (P/S)--*/
+  /* Black has the Default ones */
+
+  --dprim: #ff053f;
+  --dsec: #00e5b0;
+
+  /* Charcoal P/S */
+  --cCprim: #262626;
+  --cCsec: #8f8f8f;
+
+  /* Green P/S */
+  --gprim: #62317d;
+  --gsec: #109345;
+
+  /* White P/S */
+  --wprim: gray;
+  --wsec: black;
+
   /*--FONTS/bootstrap--*/
   --bs-body-font-family: "Mona-Sans";
+}
+
+* {
+  transition: background 600ms;
+  transition: background-color 600ms;
+  -moz-transition: background-color 600ms; /* Firefox 4 */
+  -webkit-transition: background-color 600ms; /* Safari and Chrome */
+  -o-transition: background-color 600ms;
 }
 
 @font-face {
@@ -58,7 +110,7 @@ p,
 i,
 .dropdown-item,
 .btn {
-  color: var(--white) !important;
+  color: var(--cfont) !important;
 }
 
 .btn-edit:hover i {
@@ -67,54 +119,52 @@ i,
 
 body,
 .dropdown-menu {
-  background-color: var(--neutral) !important;
+  background: var(--neutral) !important;
+  background-attachment: fixed;
+  background-position: center;
 }
 
-.border-c-gc > * > * {
-  border: 1px solid var(--dborder);
+.main-container > * > * {
+  border: 1px solid var(--cborder) !important;
   border-radius: 5px;
 }
 
-.cont-padd {
+.c-padding-2 {
   padding: 2em;
+}
+
+.c-margin-bottom-1 {
+  margin-bottom: 1em;
 }
 
 .btn,
 .dropdown-menu {
-  border: 1px solid var(--dborder) !important;
-}
-
-.btn:hover {
-  background-color: var(--dborder) !important;
+  border: 1px solid var(--cborder) !important;
 }
 
 .dropdown-item {
   --bs-dropdown-link-active-bg: var(--ohasec);
-  --bs-dropdown-link-hover-bg: var(--dborder);
+  --bs-dropdown-link-hover-bg: var(--cborder);
 }
 
-.dropdown-item:active {
-  color: var(--ohawh) !important;
-}
-
-.btn-gr {
+.btn-sec {
   border-color: var(--secundary) !important;
   color: var(--secundary) !important;
+  font-weight: bold;
 }
 
-.btn-gr:hover {
-  background-color: var(--ohasec) !important;
-  box-shadow: var(--ohasec) 0px 0px 10px 0px;
+.btn.sec:hover {
+  background-color: var(--secundary) !important;
 }
 
-.btn-rd {
-  border-color: var(--primary) !important;
+.btn-prim {
   color: var(--primary) !important;
+  border-color: var(--primary) !important;
+  font-weight: bold;
 }
 
-.btn-rd:hover {
-  background-color: var(--ohaprim) !important;
-  box-shadow: var(--ohaprim) 0px 0px 10px 0px;
+.btn.prim:hover {
+  background-color: var(--primary) !important;
 }
 
 .btn-edit {
@@ -126,4 +176,10 @@ body,
 button:hover ~ .cursor,
 [type="button"]:hover ~ .cursor {
   transform: scale(2.5);
+}
+
+.logo {
+  width: 90px;
+  user-select: none;
+  filter: var(--cfilterBW);
 }
