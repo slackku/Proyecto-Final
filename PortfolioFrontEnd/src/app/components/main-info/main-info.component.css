@@ -19,7 +19,9 @@
   border-radius: 50%;
   pointer-events: none;
   user-select: none;
-  border: 5px solid #0d0d0d;
+  border: 5px solid;
+  border-color: var(--neutral);
+  transition: border-color 600ms ease;
 }
 
 .info-btn {
@@ -37,15 +39,19 @@
 
 .logo-badge {
   width: 95px;
-  border: 1px solid var(--dborder);
-  border-radius: 5px;
   pointer-events: none;
   user-select: none;
   height: 40px;
+  filter: var(--cfilterBW);
 }
 
-.spc {
+.customspacing {
   gap: 3px;
+}
+
+.customspacing div div {
+  border-radius: 5px;
+  border: 1px solid var(--cborder);
 }
 
 .edit-profile {
@@ -62,7 +68,6 @@
 #slname {
   border-radius: 5px;
   font-size: 22px;
-  color: var(--white);
   font-family: "Hubot-Sans-EBWI";
 }
 
@@ -73,9 +78,8 @@
   padding-left: 0;
 }
 
-.swhr{
-  color: rgb(241, 241, 241);
-  padding-top: .3em;
+.swhr {
+  padding-top: 0.3em;
 }
 
 @media (max-width: 767px) {
