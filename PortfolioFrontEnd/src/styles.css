@@ -27,7 +27,7 @@
   /* Green Filter*/
   --gfilter: brightness(35%) sepia(1) saturate(540%) hue-rotate(95deg);
 
-  /*-- Color Font -- WCAG AA Checked*/
+  /*-- Color Font -- Normal Text WCAG AA Checked*/
 
   --charcoalfont: #adbbc7;
   --pinkfont: #764753;
@@ -58,6 +58,12 @@
   --wprim: gray;
   --wsec: black;
 
+  /* POSIBLE COLOR P/S/Neutral/accent | Normal Text WCAG AA Checked*/
+  --PCS1: #ef6cbc; /*CA1685 or WCAG AA NOT PASSES*/
+  --PCP1: #efe3eb; /*F7EDF2 or WCAG AA NOT PASSES*/
+
+  --PCS2: #524438;
+  --PCP2: #c4b6ac;
   /*--FONTS/bootstrap--*/
   --bs-body-font-family: "Mona-Sans";
 }
