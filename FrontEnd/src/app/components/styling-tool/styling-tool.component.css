@@ -1,0 +1,90 @@
+.style-changer {
+  display: flex;
+  position: fixed;
+  bottom: calc(5vh - 14px);
+  left: calc(2vw);
+  background-color: hsla(0, 0%, 100%, 0.01);
+  backdrop-filter: blur(2px);
+  border: 1px solid var(--cborder);
+  z-index: 1000;
+}
+
+.unpressed {
+  border-radius: 50%;
+}
+
+.pressed {
+  width: 240px;
+  border-radius: 23px;
+}
+
+.pressed i.open,
+.unpressed i.close {
+  display: none;
+}
+
+.colorBlack {
+  background-color: var(--cblack);
+  border: 1px solid var(--dborder);
+}
+
+.colorGreenB {
+  background: var(--cgreen);
+  border: 1px solid var(--dborder);
+}
+
+.colorWhite {
+  background-color: white;
+  border: 1px solid var(--bborder);
+}
+
+.colorCharcoal {
+  background: var(--ccharcoal);
+  border: 1px solid var(--bborder);
+}
+
+.colorPinkB {
+  background: #bfa3aa 50%;
+  border: 1px solid var(--bborder);
+}
+
+.colorArea div {
+  border-radius: 50%;
+  width: 1.7em;
+  height: 1.7em;
+  margin-left: 0.7em;
+}
+
+.pressed.colorArea div {
+  position: absolute;
+}
+
+.btn-st i {
+  display: flex;
+}
+
+.btn-st {
+  border: none !important;
+  border-radius: 50%;
+  font-size: 1.7em;
+  position: relative;
+  padding: 8px;
+}
+
+.color-List {
+  display: flex;
+  list-style: none;
+  vertical-align: middle;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 19%;
+  left: 0;
+  width: 0;
+  overflow: hidden;
+}
+
+.pressed .color-List {
+  left: 15%;
+  width: fit-content;
+}
