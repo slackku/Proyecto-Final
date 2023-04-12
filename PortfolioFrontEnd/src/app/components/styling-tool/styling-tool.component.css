@@ -1,11 +1,12 @@
-.contenedor {
+.style-changer {
   display: flex;
   position: fixed;
   bottom: calc(5vh - 14px);
   left: calc(2vw);
   background-color: hsla(0, 0%, 100%, 0.01);
   backdrop-filter: blur(2px);
-  border: 1px solid var(--dborder);
+  border: 1px solid var(--cborder);
+  z-index: 1000;
 }
 
 .unpressed {
@@ -17,18 +18,19 @@
   border-radius: 23px;
 }
 
-.pressed i.open, .unpressed i.close{
+.pressed i.open,
+.unpressed i.close {
   display: none;
-  transition: display 2s ease-in-out;
 }
 
 .colorBlack {
-  background-color: #0d0d0d;
+  background-color: var(--cblack);
   border: 1px solid var(--dborder);
 }
 
-.colorGray {
-  background-color: gray;
+.colorGreenB {
+  background: var(--cgreen);
+  border: 1px solid var(--dborder);
 }
 
 .colorWhite {
@@ -36,8 +38,14 @@
   border: 1px solid var(--bborder);
 }
 
-.colorGoldyB {
-  background: linear-gradient(to right, gold 50%, black 50%);
+.colorCharcoal {
+  background: var(--ccharcoal);
+  border: 1px solid var(--bborder);
+}
+
+.colorPinkB {
+  background: #bfa3aa 50%;
+  border: 1px solid var(--bborder);
 }
 
 .colorArea div {
@@ -58,9 +66,9 @@
 .btn-st {
   border: none !important;
   border-radius: 50%;
-  font-size: 2em;
+  font-size: 1.7em;
   position: relative;
-  padding: 5px;
+  padding: 8px;
 }
 
 .color-List {
@@ -70,7 +78,7 @@
   margin: 0;
   padding: 0;
   position: absolute;
-  top: 17%;
+  top: 19%;
   left: 0;
   width: 0;
   overflow: hidden;
