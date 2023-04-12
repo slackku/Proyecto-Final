@@ -1,19 +1,27 @@
 <div>
     <div>
-        <img src="../../../assets/banner-sample.png" alt="" class="banner">
-        <img src="../../../assets/img-sample.jpg" alt="" class="profile-img">
+        <img [src]="myPortfolio.mainInfo.bannerImage" alt="" class="banner">
+        <img [src]="myPortfolio.mainInfo.profilePicture" alt="" class="profile-img">
         <button type="button" class="edit-profile btn-edit"><i class="fa-solid fa-pen-to-square"></i></button>
     </div>
-    <div class="info-btn cont-padd">
+    <div class="info-btn c-padding-2">
         <div class="info-main d-flex row pb-2">
             <div class="col-md-5 col-sm-12">
-                <p id="slname">IGNACIO LORENZO</p>
-                <p class="sprof"><span>Full Stack Developer Jr.</span></p>
-                <p class="swhr">Tucuman (Argentina)</p>
+                <p id="slname">{{myPortfolio.mainInfo.name}}</p>
+                <p class="sprof"><span>{{myPortfolio.mainInfo.position}}</span></p>
+                <p class="swhr">{{myPortfolio.mainInfo.location}} ({{myPortfolio.mainInfo.country}})</p>
             </div>
-            <div class="d-flex flex-md-column flex-sm-row col-md-7 col-12 justify-content-center spc">
-                <img src="../../../assets/unt-logo.png" alt="" class="logo-badge p-1 align-self-md-end">
-                <img src="../../../assets/unt-logo.png" alt="" class="logo-badge p-1 align-self-md-end">
+            <div class="d-flex flex-md-column flex-sm-row col-md-7 col-12 justify-content-center customspacing">
+                <div class="d-flex justify-content-end">
+                    <div>
+                        <img src="../../../assets/unt-logo.png" alt="" class="logo-badge p-1 align-self-md-end">
+                    </div>
+                </div>
+                <div class="d-flex justify-content-end ">
+                    <div>
+                        <img src="../../../assets/unt-logo.png" alt="" class="logo-badge p-1 align-self-md-end">
+                    </div>
+                </div>
             </div>
         </div>
         <div class="d-flex justify-content-center justify-content-md-start">
