@@ -5,16 +5,11 @@
 }
 
 .navbar {
-  border-bottom: 1px solid rgb(255, 255, 255, 0.1) !important;
+  border-bottom: 1px solid var(--cborder) !important;
 }
 
 a {
-  color: white;
   font-size: 1.3em;
-}
-
-a:hover {
-  color: white;
 }
 
 .navbar-brand {
@@ -27,7 +22,7 @@ a:hover {
   font-family: "Hubot-Sans-EBWI";
 }
 
-@media (max-width: 350px) {
+@media (max-width: 365px) {
   p.etapa{
     display: none !important;
   }
