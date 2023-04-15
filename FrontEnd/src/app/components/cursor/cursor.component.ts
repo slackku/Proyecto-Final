@@ -19,7 +19,11 @@ export class CursorComponent {
 
     const btns_edit = document.getElementsByClassName('btn-edit');
     const links = document.querySelector('a') as HTMLElement;
-    const btns = document.getElementsByClassName('btn');
+    // Correccion para el hover de botones log in & out
+    // *ngIf directamente en los html o en los contenedores generados de Angular
+    // no permite la correcta obtencion de dichos elementos con metodos de java 
+    //(retornan listas de lenght 0)
+    const btns = document.getElementsByClassName('button-container'); 
     const colorSph = document.getElementsByClassName('colorSph');
 
     this.eloHtmlColection(colorSph, cursor);
@@ -27,8 +31,9 @@ export class CursorComponent {
     this.eloHtmlColection(btns, cursor);
     this.eloHtmlElement(links, cursor);
   }
-  
-  eloHtmlElement(htmlE: HTMLElement, cursor: HTMLElement) { //Event Listener on a HTMLElement
+
+  eloHtmlElement(htmlE: HTMLElement, cursor: HTMLElement) {
+    //Event Listener on a HTMLElement
     htmlE.addEventListener('mouseenter', () => {
       cursor.classList.toggle('normal');
       cursor.classList.add('ontext');
@@ -38,7 +43,8 @@ export class CursorComponent {
       cursor.classList.add('normal');
     });
   }
-  eloHtmlColection(htmlC: HTMLCollection, cursor: HTMLElement) { //Event Listener on a HTMLCollection
+  eloHtmlColection(htmlC: HTMLCollection, cursor: HTMLElement) {
+    //Event Listener on a HTMLCollection
     for (var i = 0; i < htmlC.length; i++) {
       htmlC[i].addEventListener('mouseenter', () => {
         cursor.classList.toggle('normal');
