@@ -8,6 +8,8 @@
     mix-blend-mode: difference;
     border-radius: 50%;
     z-index: 10000;
+    transition: top 200ms, left 200ms;
+    transition-timing-function: ease-out;
   }
 
   .normal {
