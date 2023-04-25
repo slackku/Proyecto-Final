@@ -24,13 +24,15 @@ export class StylingToolComponent {
       'var(--cpink)',
       'var(--ccharcoal)',
       'var(--cgreen)',
+      'var(--cred)',
     ];
     const borderSty = [
-      'var(--dborder)',
-      'var(--bborder)',
+      'var(--wTr)',
+      'var(--bTr)',
       'var(--pborder)',
-      'var(--dborder)',
+      'var(--wTr)',
       'var(--gborder)',
+      'var(--rborder)',
     ];
     const fontSty = [
       'var(--cwhite)',
@@ -38,6 +40,7 @@ export class StylingToolComponent {
       'var(--pinkfont)',
       'var(--charcoalfont)',
       'var(--greenfont)',
+      'var(--cwhite)',
     ];
 
     const imgsSty = [
@@ -46,23 +49,77 @@ export class StylingToolComponent {
       'var(--pfilter)',
       'var(--cCfilter)',
       'var(--gfilter)',
+      'var(--rfilter)',
     ];
 
     const primSty = [
-      'var(--dprim)',
-      'var(--wprim)',
+      'var(--credish)',
+      'var(--cgraytwo)',
       'var(--cwhite)',
-      'var(--cCprim)',
-      'var(--gprim)',
+      'var(--cwhite)',
+      'var(--cwhite)',
+      'var(--cwhite)',
     ];
 
     const secSty = [
-      'var(--dsec)',
-      'var(--wsec)',
       'var(--cwhite)',
-      'var(--cCsec)',
-      'var(--gsec)',
+      'var(--cgrayone)',
+      'var(--cmagish)',
+      'var(--cgrayone)',
+      'var(--clighterGreen)',
+      'var(--clighterRed)',
     ];
+
+    const headerSty = [
+      'var(--cwhite)',
+      'var(--cblack)',
+      'var(--cmagish)',
+      'var(--cgrayone)',
+      'var(--clighterGreen)',
+      'var(--clighterRed)',
+    ];
+
+    const slName = [
+      'var(--credish)',
+      'var(--cgraythree)',
+      'var(--accentPink)',
+      'var(--cgrayfour)',
+      'var(--cblack)',
+      'var(--cblack)',
+    ];
+
+    const hoverPrim = [
+      'var(--dTrA)',
+      'var(--dTrB)',
+      'var(--wTr)',
+      'var(--wTr)',
+      'var(--wTr)',
+      'var(--rTrA)',
+    ];
+
+    const hoverSec = [
+      'var(--wTr)',
+      'var(--wTrB)',
+      'var(--pTrB)',
+      'var(--ccTrB)',
+      'var(--gTrB)',
+      'var(--rTrB)',
+    ];
+
+    if (localStorage.getItem('color-index') != null) {
+      let index: any;
+      index = localStorage.getItem('color-index');
+      root.setProperty('--neutral', neutralSty[parseInt(index)]);
+      root.setProperty('--cborder', borderSty[parseInt(index)]);
+      root.setProperty('--cfont', fontSty[parseInt(index)]);
+      root.setProperty('--cfilterBW', imgsSty[parseInt(index)]);
+      root.setProperty('--primary', primSty[parseInt(index)]);
+      root.setProperty('--secundary', secSty[parseInt(index)]);
+      root.setProperty('--header', headerSty[parseInt(index)]);
+      root.setProperty('--slName', slName[parseInt(index)]);
+      root.setProperty('--hoverPrim', hoverPrim[parseInt(index)]);
+      root.setProperty('--hoverSec', hoverSec[parseInt(index)]);
+    }
 
     for (let i = 0; colorDiv.length > i; i++) {
       colorDiv[i].addEventListener('click', () => {
@@ -72,6 +129,11 @@ export class StylingToolComponent {
         root.setProperty('--cfilterBW', imgsSty[i]);
         root.setProperty('--primary', primSty[i]);
         root.setProperty('--secundary', secSty[i]);
+        root.setProperty('--header', headerSty[i]);
+        root.setProperty('--slName', slName[i]);
+        root.setProperty('--hoverPrim', hoverPrim[i]);
+        root.setProperty('--hoverSec', hoverSec[i]);
+        localStorage.setItem('color-index', i.toString());
       });
     }
   }

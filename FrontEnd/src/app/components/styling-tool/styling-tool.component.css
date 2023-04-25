@@ -14,7 +14,7 @@
 }
 
 .pressed {
-  width: 240px;
+  width: 17.5rem;
   border-radius: 23px;
 }
 
@@ -25,27 +25,33 @@
 
 .colorBlack {
   background-color: var(--cblack);
-  border: 1px solid var(--dborder);
+  border: 1px solid var(--wTr);
+  margin-left: unset;
 }
 
 .colorGreenB {
   background: var(--cgreen);
-  border: 1px solid var(--dborder);
+  border: 1px solid var(--wTr);
 }
 
 .colorWhite {
-  background-color: white;
-  border: 1px solid var(--bborder);
+  background-color: #fcfcfc;
+  border: 1px solid var(--bTr);
 }
 
 .colorCharcoal {
   background: var(--ccharcoal);
-  border: 1px solid var(--bborder);
+  border: 1px solid var(--bTr);
 }
 
 .colorPinkB {
-  background: #bfa3aa 50%;
-  border: 1px solid var(--bborder);
+  background-color: var(--cpink);
+  border: 1px solid var(--bTr);
+}
+
+.colorRed{
+  background-color: var(--cred);
+  border: 1px solid var(--wTr);
 }
 
 .colorArea div {
@@ -85,6 +91,6 @@
 }
 
 .pressed .color-List {
-  left: 15%;
+  left: 13%;
   width: fit-content;
 }
