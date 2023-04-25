@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -12,6 +11,14 @@ import { StylingToolComponent } from './components/styling-tool/styling-tool.com
 import { HttpClientModule } from '@angular/common/http';
 import { ExtendedInfoComponent } from './components/extended-info/extended-info.component';
 import { LoginComponent } from './components/login/login.component';
+import { HomePageComponent } from './components/home-page/home-page.component';
+import { LoginPageComponent } from './components/login-page/login-page.component';
+import { HardSoftSkillsComponent } from './components/hard-soft-skills/hard-soft-skills.component';
+import { ProyectsComponent } from './components/proyects/proyects.component';
+import { NgCircleProgressModule } from 'ng-circle-progress';
+import { FormsModule } from '@angular/forms';
+import { authInterceptorProviders } from './services/auth.interceptor';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,13 +30,19 @@ import { LoginComponent } from './components/login/login.component';
     StylingToolComponent,
     ExtendedInfoComponent,
     LoginComponent,
+    HomePageComponent,
+    LoginPageComponent,
+    HardSoftSkillsComponent,
+    ProyectsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    NgCircleProgressModule.forRoot({}),
+    FormsModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [authInterceptorProviders],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
