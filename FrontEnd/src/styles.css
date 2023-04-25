@@ -126,6 +126,11 @@ label {
   font-family: "Mona-Sans";
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
 p,
 i,
 label,
@@ -216,3 +221,6 @@ button:hover ~ .cursor,
 .cnt-btn-info {
   padding: 4em 2em 2em 2em;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
