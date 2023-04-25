@@ -3,16 +3,20 @@
   --cfont: #fcfcfc;
   --cborder: #ffffff1a;
   --cfilterBW: none;
-
-  --primary: #ff053f;
-  --secundary: #00e5b0;
-
+  --hoverPrim: #ff003736;
+  --hoverSec: #ffffff1a;
+  --primary: #ff0037;
+  --secundary: --cwhite;
+  --header: --cwhite;
+  --slName: #ff0037;
   /*-- Neutral Colors --*/
-  --cwhite: #fcfcfc;
+
   --cblack: #0d0d0d;
-  --cgreen: #0d1811;
-  --ccharcoal: #36454f;
+  --cwhite: #fcfcfc;
   --cpink: #bfa3aa;
+  --ccharcoal: #36454f;
+  --cgreen: #0d1811;
+  --cred: #1a0000;
 
   /* Image Filters for each different color style*/
   /* This ones are only tested and created only for white images.*/
@@ -27,48 +31,57 @@
   /* Green Filter*/
   --gfilter: brightness(35%) sepia(1) saturate(540%) hue-rotate(95deg);
 
-  /*-- Color Font -- Normal Text WCAG AA Checked*/
+  /* Red Filter*/
+  --rfilter: brightness(24%) sepia(1) saturate(1840%) hue-rotate(-19deg);
+
+  /*-- Color Font --*/
 
   --charcoalfont: #adbbc7;
   --pinkfont: #764753;
-  --greenfont: #109345;
+  --greenfont: #00bd4f;
 
-  /*-- Borders --*/
-  /**/
-  --dborder: #ffffff1a;
-  --bborder: #00000052;
+  /*-- Transparent colors for Hovers or some borders --*/
+
+  --dTrA: #ff003736;
+  --dTrB: #40404052;
+
+  --wTr: #ffffff1a;
+  --bTr: #00000052;
+
+  --wTrB: #80808052;
+
+  --pTrB: #79435652;
+
+  --ccTrB: #8f8f8f52;
+
+  --gTrB: #00953f1c;
+
+  --rTrA: #c1151552;
+  --rTrB: #e9372c54;
+  /* Border */
+
   --pborder: #b28590;
-  --gborder: #0c7235;
+  --gborder: #0f803c;
+  --rborder: #c11515;
+  /*-- Colors --*/
 
-  /*-- Primarys/Secondarys (P/S)--*/
-  /* Black has the Default ones */
-
-  --dprim: #ff053f;
-  --dsec: #00e5b0;
-
-  /* Charcoal P/S */
-  --cCprim: #262626;
-  --cCsec: #8f8f8f;
-
-  /* Green P/S */
-  --gprim: #62317d;
-  --gsec: #109345;
-
-  /* White P/S */
-  --wprim: gray;
-  --wsec: black;
-
-  /* POSIBLE COLOR P/S/Neutral/accent | Normal Text WCAG AA Checked*/
-  --PCS1: #ef6cbc; /*CA1685 or WCAG AA NOT PASSES*/
-  --PCP1: #efe3eb; /*F7EDF2 or WCAG AA NOT PASSES*/
-
-  --PCS2: #524438;
-  --PCP2: #c4b6ac;
+  --credish: #ff0037;
+  --cgrayone: #8f8f8f;
+  --cgraytwo: #404040;
+  --cgraythree: #b0b0b0;
+  --cgrayfour: #1f1f1f;
+  --cmagish: #794356;
+  --clighterGreen: #00953f;
+  --clighterRed: #e9372c;
+  --accentPink: #ece3e3;
   /*--FONTS/bootstrap--*/
+
   --bs-body-font-family: "Mona-Sans";
 }
 
 * {
+  padding: 0;
+  margin: 0;
   transition: background 600ms;
   transition: background-color 600ms;
   -moz-transition: background-color 600ms; /* Firefox 4 */
@@ -86,9 +99,9 @@
   src: url("assets/font/Mona-Sans-Medium.ttf");
 }
 
-html *,
-[type="button"] {
-  cursor: none !important;
+img,
+image {
+  pointer-events: none;
 }
 
 h3 {
@@ -98,13 +111,18 @@ h3 {
 h1,
 h2,
 h3,
-h4 {
+h4,
+h5,
+.etapa {
   font-family: "Hubot-Sans-EBWI";
+  color: var(--header) !important;
 }
 
 p,
 button,
-a {
+a,
+text,
+label {
   font-family: "Mona-Sans";
 }
 
@@ -112,8 +130,10 @@ h1,
 h2,
 h3,
 h4,
+h5,
 p,
 i,
+label,
 .dropdown-item,
 .btn {
   color: var(--cfont) !important;
@@ -153,26 +173,27 @@ body,
   --bs-dropdown-link-hover-bg: var(--cborder);
 }
 
+.btn-sec:hover {
+  background-color: var(--wTr);
+  box-shadow: 0 0 17px var(--hoverSec);
+}
+
+.btn-prim:hover {
+  background-color: var(--wTr);
+  box-shadow: 0 0 17px var(--hoverPrim);
+}
+
 .btn-sec {
   border-color: var(--secundary) !important;
   color: var(--secundary) !important;
   font-weight: bold;
 }
 
-.btn.sec:hover {
-  background-color: var(--secundary) !important;
-}
-
 .btn-prim {
-  color: var(--primary) !important;
   border-color: var(--primary) !important;
+  color: var(--primary) !important;
   font-weight: bold;
 }
-
-.btn.prim:hover {
-  background-color: var(--primary) !important;
-}
-
 .btn-edit {
   background-color: unset;
   border: unset;
@@ -181,7 +202,7 @@ body,
 
 button:hover ~ .cursor,
 [type="button"]:hover ~ .cursor {
-  transform: scale(2.5);
+  transform: scale(2.5) !important;
 }
 
 .logo {
@@ -189,3 +210,17 @@ button:hover ~ .cursor,
   user-select: none;
   filter: var(--cfilterBW);
 }
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  padding: 1.3em;
+  gap: 1em;
+}
+
+.cnt-btn-info {
+  padding: 4em 2em 2em 2em;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
