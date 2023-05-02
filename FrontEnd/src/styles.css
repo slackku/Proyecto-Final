@@ -6,8 +6,8 @@
   --hoverPrim: #ff003736;
   --hoverSec: #ffffff1a;
   --primary: #ff0037;
-  --secundary: --cwhite;
-  --header: --cwhite;
+  --secundary: var(--cwhite);
+  --header: var(--cwhite);
   --slName: #ff0037;
   /*-- Neutral Colors --*/
 
@@ -126,11 +126,6 @@ label {
   font-family: "Mona-Sans";
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
 p,
 i,
 label,
@@ -198,6 +193,7 @@ body,
   background-color: unset;
   border: unset;
   width: fit-content;
+  height: fit-content;
 }
 
 button:hover ~ .cursor,
