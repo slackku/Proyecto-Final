@@ -1,31 +1,34 @@
 <div>
     <div>
-        <img [src]="myPortfolio.mainInfo.bannerImage" alt="" class="banner">
-        <img [src]="myPortfolio.mainInfo.profilePicture" alt="" class="profile-img">
+        <div class="banner-container"><img src="../assets/img/banner.png" alt="" class="banner"></div>
+        <!-- <img [src]="myPortfolio.mainInfo.bannerImage" alt="" class="banner"> -->
+        <img src="../assets/img/img-sample.jpg" alt="" class="profile-img">
+        <!--  <img [src]="myPortfolio.mainInfo.profilePicture" alt="" class="profile-img"> -->
         <button type="button" class="edit-profile btn-edit"><i class="fa-solid fa-pen-to-square"></i></button>
     </div>
     <div class="info-btn c-padding-2">
         <div class="info-main d-flex row pb-2">
             <div class="col-md-5 col-sm-12">
-                <p id="slname">{{myPortfolio.mainInfo.name}}</p>
-                <p class="sprof"><span>{{myPortfolio.mainInfo.position}}</span></p>
-                <p class="swhr">{{myPortfolio.mainInfo.location}} ({{myPortfolio.mainInfo.country}})</p>
+                <p class="header-color"> Ignacio Lorenzo</p>
+                <p class="sprof"><span>Full Stack Developer Jr</span></p>
+                <!-- <p class="swhr">{{myPortfolio.mainInfo.location}} ({{myPortfolio.mainInfo.country}})</p> -->
             </div>
-            <div class="d-flex flex-md-column flex-sm-row col-md-7 col-12 justify-content-center customspacing">
+            <div
+                class="d-flex flex-md-column flex-sm-row col-md-7 col-12 justify-content-center customspacing mt-2 mt-md-0">
                 <div class="d-flex justify-content-end">
                     <div>
-                        <img src="../../../assets/unt-logo.png" alt="" class="logo-badge p-1 align-self-md-end">
+                        <img src="../assets/img/unt-logo.png" alt="" class="logo-badge p-1 align-self-md-end">
                     </div>
                 </div>
-                <div class="d-flex justify-content-end ">
+                <div class="d-flex justify-content-end">
                     <div>
-                        <img src="../../../assets/unt-logo.png" alt="" class="logo-badge p-1 align-self-md-end">
+                        <img src="../assets/img/unt-logo.png" alt="" class="logo-badge p-1 align-self-md-end ">
                     </div>
                 </div>
             </div>
         </div>
         <div class="d-flex justify-content-center justify-content-md-start">
-            <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+            <div class="btn-group button-container" role="group" aria-label="Button group with nested dropdown">
                 <button type="button" class="btn">Intereses</button>
                 <button type="button" class="btn">Añadir</button>
                 <div class="btn-group" role="group">
