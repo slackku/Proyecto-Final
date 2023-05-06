@@ -2,7 +2,7 @@
   display: flex;
   position: fixed;
   bottom: calc(5vh - 14px);
-  left: calc(2vw);
+  left: 2vw;
   background-color: hsla(0, 0%, 100%, 0.01);
   backdrop-filter: blur(2px);
   border: 1px solid var(--cborder);
@@ -49,7 +49,7 @@
   border: 1px solid var(--bTr);
 }
 
-.colorRed{
+.colorRed {
   background-color: var(--cred);
   border: 1px solid var(--wTr);
 }
@@ -70,6 +70,7 @@
 }
 
 .btn-st {
+  background-color: unset;
   border: none !important;
   border-radius: 50%;
   font-size: 1.7em;
