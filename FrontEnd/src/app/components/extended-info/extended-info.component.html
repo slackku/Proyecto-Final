@@ -1,36 +1,38 @@
 <div class="c-padding-2 c-margin-bottom-1">
     <div class="d-flex justify-content-between">
-        <h3>Acerca de mí</h3>
-        <button type="button" class="btn-edit"><i class="fa-solid fa-pen-to-square"></i></button>
+        <h3 class="header-color">Acerca de mí</h3>
+        <button *ngIf="isSessionOn" type="button" class="btn-edit fa-btn"><i
+                class="fa-solid fa-pen-to-square"></i></button>
     </div>
     <p>
-        {{myPortfolio.about}}
+        {{persona.sobreMi}}
     </p>
 </div>
 <div class="c-padding-2 c-margin-bottom-1">
     <div class="d-flex justify-content-between">
-        <h3>Educacion</h3>
-        <button type="button" class="btn-edit"><i class="fa-solid fa-pen-to-square"></i></button>
+        <h3 class="header-color">Educacion</h3>
+        <button id="addEduc" data-type-edit="Agregar Educacion" *ngIf="isSessionOn" type="button" class="fa-btn"
+            data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-plus"></i></button>
     </div>
-    <div>
-        <p>
-            [[IMAGEN]] {{myPortfolio.education.highschool.name}} -
-            {{myPortfolio.education.highschool.orientation}} ({{myPortfolio.education.highschool.state}})
-        </p>
-        <p>
-            [[IMAGEN]] {{myPortfolio.education.university.name}} - {{myPortfolio.education.university.career}}
-            ({{myPortfolio.education.university.state}})
-        </p>
+    <div class="d-flex flex-column mt-2">
+        <div id="educacion">
+        </div>
     </div>
 </div>
 <div class="c-padding-2 c-margin-bottom-1">
     <div class="d-flex justify-content-between">
-        <h3>Experiencia</h3>
-        <button type="button" class="btn-edit"><i class="fa-solid fa-pen-to-square"></i></button>
+        <h3 class="header-color">Experiencia</h3>
+        <button id="addExp" data-type-edit="Agregar Experiencia" *ngIf="isSessionOn" type="button" class="fa-btn"
+            data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-plus"></i></button>
     </div>
-    <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi, sit deleniti? Necessitatibus modi tempore
-        minus
-        veniam quasi eius dolores enim reprehenderit aut, deserunt nobis praesentium. Dolore vitae odit iusto modi!
-    </p>
+    <div class="d-flex flex-column mt-2">
+        <div id="experiencia">
+        </div>
+    </div>
+</div>
+<div class="c-padding-2 c-margin-bottom-1">
+    <app-hard-soft-skills></app-hard-soft-skills>
+</div>
+<div class="c-padding-2 c-margin-bottom-1">
+    <app-proyects></app-proyects>
 </div>
