@@ -7,8 +7,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
-  isSessionOn: boolean = false;
-
+  isSessionOn = parseInt(
+    localStorage.getItem('isSessionOn')?.toString() as string
+  )
   constructor(private router: Router) {}
 
   login() {
