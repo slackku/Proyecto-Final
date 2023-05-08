@@ -14,7 +14,7 @@ export class Persona {
   sobreMi: String;
   educacion: Array<Educacion>;
   experiencias: Array<Experiencia>;
-  proyecto: Array<Proyectos>;
+  proyectos: Array<Proyectos>;
 
   constructor(
     nombre: String,
@@ -39,6 +39,6 @@ export class Persona {
     this.sobreMi = sobreMi;
     this.educacion = educacion;
     this.experiencias = experiencias;
-    this.proyecto = proyectos;
+    this.proyectos = proyectos;
   }
 }
