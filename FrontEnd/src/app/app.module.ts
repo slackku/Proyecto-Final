@@ -14,10 +14,10 @@ import { LoginComponent } from './components/login/login.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { LoginPageComponent } from './components/login-page/login-page.component';
 import { HardSoftSkillsComponent } from './components/hard-soft-skills/hard-soft-skills.component';
-import { ProyectsComponent } from './components/proyects/proyects.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { FormsModule } from '@angular/forms';
-import { authInterceptorProviders } from './services/auth.interceptor';
+import { ModalFormComponent } from './components/modal-form/modal-form.component';
+import { ModalConfirmationComponent } from './components/modal-confirmation/modal-confirmation.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +33,8 @@ import { authInterceptorProviders } from './services/auth.interceptor';
     HomePageComponent,
     LoginPageComponent,
     HardSoftSkillsComponent,
-    ProyectsComponent,
+    ModalFormComponent,
+    ModalConfirmationComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,7 +43,7 @@ import { authInterceptorProviders } from './services/auth.interceptor';
     NgCircleProgressModule.forRoot({}),
     FormsModule,
   ],
-  providers: [authInterceptorProviders],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

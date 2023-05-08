@@ -1,0 +1,46 @@
+<div class="modal" id="formModal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="formModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="formModalLabel">Modal title</h1>
+                <button type="button" class="fa-btn restaurar" data-bs-dismiss="modal" (click)="restaurar()"
+                    aria-label="Close">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="#">
+                    <div id="form-control-container">
+                        <div class="form-floating mb-2">
+                            <input type="text" name="ffield" class="form-control" (input)="some($event.target)"
+                                id="ffield" placeholder="Nombre" required>
+                            <label for="ffield">Nombre</label>
+                        </div>
+                        <div class="form-floating mb-2">
+                            <input type="text" name="sfield" class="form-control" (input)="some($event.target)"
+                                id="sfield" placeholder="Nombre" required>
+                            <label for="sfield">Nombre</label>
+                        </div>
+                        <div class="form-floating mb-2">
+                            <input type="text" name="tfield" class="form-control" (input)="some($event.target)"
+                                id="tfield" placeholder="Fecha" required>
+                            <label for="tfield">Fecha Inicio</label>
+                        </div>
+                        <div class="form-floating mb-2">
+                            <input type="text" name="cfield" class="form-control" (input)="some($event.target)"
+                                id="cfield" placeholder="Fecha">
+                            <label for="cfield">Fecha Final</label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-sec restaurar" data-bs-dismiss="modal"
+                    (click)="restaurar()">Cerrar</button>
+                <button type="button" class="btn btn-prim" (click)="verificar()">Guardar
+                    Cambios</button>
+            </div>
+        </div>
+    </div>
+</div>
