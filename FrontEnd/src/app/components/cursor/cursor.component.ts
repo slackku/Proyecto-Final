@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./cursor.component.css'],
 })
 export class CursorComponent {
-  ngOnInit(): void {
+  ngOnInit() {
     const cursor = document.querySelector('#cursor') as HTMLElement;
     document.addEventListener('mousemove', (e) => {
       let x = e.clientX;
