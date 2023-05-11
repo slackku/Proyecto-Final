@@ -11,7 +11,7 @@ import { Proyectos } from 'src/app/model/Proyectos.model';
   providedIn: 'root',
 })
 export class PersonaService {
-  URL = 'http://localhost:8080/';
+  URL = 'http://b02xgrwk0ywrbflaogbg-mysql.services.clever-cloud.com/';
   constructor(private http: HttpClient) {}
   public getPersona(): Observable<Persona> {
     return this.http.get<Persona>(this.URL + 'persona/traer/1');
