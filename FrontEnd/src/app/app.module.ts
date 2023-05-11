@@ -15,9 +15,9 @@ import { HomePageComponent } from './components/home-page/home-page.component';
 import { LoginPageComponent } from './components/login-page/login-page.component';
 import { HardSoftSkillsComponent } from './components/hard-soft-skills/hard-soft-skills.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
-import { FormsModule } from '@angular/forms';
-import { ModalFormComponent } from './components/modal-form/modal-form.component';
-import { ModalConfirmationComponent } from './components/modal-confirmation/modal-confirmation.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -33,8 +33,8 @@ import { ModalConfirmationComponent } from './components/modal-confirmation/moda
     HomePageComponent,
     LoginPageComponent,
     HardSoftSkillsComponent,
-    ModalFormComponent,
-    ModalConfirmationComponent,
+    FooterComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -42,6 +42,8 @@ import { ModalConfirmationComponent } from './components/modal-confirmation/moda
     HttpClientModule,
     NgCircleProgressModule.forRoot({}),
     FormsModule,
+    NgbModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
