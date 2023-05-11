@@ -1,4 +1,6 @@
-﻿# PortfolioFrontEnd
+# Portfolio
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.2.
  
 This is going to be my first try on what i would call, the website development journey.
 
@@ -20,5 +22,6 @@ Also it is worth saying that this project its going to be the final handover of 
 ## Technologies:
 - HTML (lil easy, but a start its a start)
 - CSS3 (Boostrap Framework and raw CSS)
+- Angular CLI
     
 Some others would be added or even deleted while the project evolves.
