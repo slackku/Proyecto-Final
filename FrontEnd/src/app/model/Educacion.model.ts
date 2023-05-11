@@ -1,15 +1,15 @@
 export class Educacion {
-  idEduc: Number;
+  idEduc?: Number;
   nombreInst: String;
   carrera: String;
   fecStart: String;
   fecEnd: String;
   constructor(
-    idEduc: Number,
     nombreInst: String,
     carrera: String,
     fecStart: String,
-    fecEnd: String
+    fecEnd: String,
+    idEduc?: Number
   ) {
     this.idEduc = idEduc;
     this.nombreInst = nombreInst;
@@ -18,4 +18,3 @@ export class Educacion {
     this.fecEnd = fecEnd;
   }
 }
-
