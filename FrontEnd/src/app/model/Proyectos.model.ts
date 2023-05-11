@@ -1,15 +1,15 @@
 export class Proyectos {
-  idProy: Number;
+  idProy?: Number;
   nombreProyecto: String;
   fecStart: String;
   proyectImg: String;
   descripcion: String;
   constructor(
-    idProy: Number,
     nombreProyecto: String,
     fecStart: String,
     proyectImg: String,
-    descripcion: String
+    descripcion: String,
+    idProy?: Number
   ) {
     this.idProy = idProy;
     this.nombreProyecto = nombreProyecto;
@@ -18,5 +18,3 @@ export class Proyectos {
     this.descripcion = descripcion;
   }
 }
-
-
