@@ -1,13 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { LoginService } from 'src/app/services/login.service';
+import { LoginRequest } from 'src/app/services/auth/loginRequest';
+import { PersonaService } from 'src/app/services/auth/persona.service';
 @Component({
   selector: 'app-login-page',
   templateUrl: './login-page.component.html',
   styleUrls: ['./login-page.component.css'],
 })
 export class LoginPageComponent {
-  constructor(private router: Router, private loginService: LoginService) {}
+  constructor(private router: Router, private personaService: PersonaService) {}
 
   homePage() {
     this.router.navigate(['/']);
@@ -16,13 +18,14 @@ export class LoginPageComponent {
     username: '',
     password: '',
   };
+
   ngOnInit() {
     const cursor = document.querySelector('#cursor') as HTMLElement;
     const btns = document.getElementsByClassName('btn');
     this.eloHtmlColection(btns, cursor);
   }
 
-  formSubmit() {
+  send() {
     const formCont = document.getElementById(
       'form-control-container'
     ) as HTMLElement;
@@ -30,7 +33,7 @@ export class LoginPageComponent {
     const passField = formCont.childNodes[1] as HTMLElement;
     if (
       this.loginData.username.trim() == '' ||
-      this.loginData.username.trim() == null
+      this.loginData.password.trim() == ''
     ) {
       if (formCont.childElementCount > 2) {
         formCont.removeChild(formCont.childNodes[2]);
@@ -39,51 +42,28 @@ export class LoginPageComponent {
       formCont.appendChild(p);
       this.changeifInvalid(userField, passField);
     } else {
+      this.personaService.login(this.loginData).subscribe((data) => {
+        if (data.id != null) {
+          localStorage.setItem('isSessionOn', '1');
+          this.router.navigate(['']);
+        } else {
+          localStorage.setItem('isSessionOn', '0');
+        }
+      });
       this.changeifInvalid(userField, passField);
       this.removeAppend(formCont);
     }
-
-    this.loginService.generateToken(this.loginData).subscribe(
-      (data: any) => {
-        console.log(data);
-
-        this.loginService.loginUser(data.token);
-        this.loginService.getCurrentUser().subscribe((user: any) => {
-          this.loginService.setUser(user);
-          console.log(user);
-
-          if (this.loginService.getUserRole() == 'ADMIN') {
-            // Si es admin TAL
-            console.log('HOLA ADMIN');
-            this.router.navigate(['/']);
-          } else if (this.loginService.getUserRole() == 'NORMAL') {
-            // Si es normal
-            console.log('Hola, normalico');
-            this.router.navigate(['/']);
-          } else {
-            this.loginService.logout();
-            console.log("HOLA");
-            let p = this.genMessage('Datos invalido, vuelva a intentar');
-            formCont.appendChild(p);
-            this.changeifInvalid(userField, passField);
-          }
-        });
-      },
-      (error) => {
-        console.error(error);
-      }
-    );
   }
-
   changeifInvalid(userField: HTMLElement, passField: HTMLElement) {
     const pfield = passField.childNodes[0] as HTMLElement;
     const ufield = userField.childNodes[0] as HTMLElement;
-    if (this.loginData.password.trim() == '') {
+    let loginObject = this.loginData;
+    if (loginObject.password?.trim() == '' || loginObject.password == null) {
       pfield.classList.add('is-invalid');
     } else {
       pfield.classList.remove('is-invalid');
     }
-    if (this.loginData.username.trim() == '') {
+    if (loginObject.username?.trim() == '' || loginObject.password == null) {
       ufield.classList.add('is-invalid');
     } else {
       ufield.classList.remove('is-invalid');

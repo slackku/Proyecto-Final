@@ -3,14 +3,14 @@
 <div class="wrapper">
     <div class="container mw-50 w-100 h-100">
         <div class="mt-5 pt-4">
-            <form (ngSubmit)="formSubmit()" class="form p-4 login-form" method="POST">
+            <form class="form p-4 login-form" method="POST">
                 <h2 class="text-center mt-4 mb-4">Log in</h2>
                 <p class="text-center">Ingrese su usuario y contraseña</p>
                 <fieldset class="input-container p-2">
                     <div id="form-control-container">
                         <div class="form-floating mb-4">
-                            <input type="text" [(ngModel)]='loginData.username' name="username" class="form-control" id="floatingInput"
-                                placeholder="example" required>
+                            <input type="text" [(ngModel)]='loginData.username' name="username" class="form-control"
+                                id="floatingInput" placeholder="example" required>
                             <label for="floatingInput">Usuario</label>
                         </div>
                         <div class="form-floating mb-2" id="pass-inp">
@@ -19,11 +19,9 @@
                             <label for="floatingPassword">Contraseña</label>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-prim d-flex m-auto mt-4">Ingresar</button>
+                    <button type="submit" (click)="send()" class="btn btn-prim d-flex m-auto mt-4">Ingresar</button>
                 </fieldset>
             </form>
         </div>
-
     </div>
 </div>
-<app-styling-tool></app-styling-tool>
