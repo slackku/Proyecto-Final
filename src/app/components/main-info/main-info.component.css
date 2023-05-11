@@ -27,6 +27,7 @@
   border: 5px solid;
   border-color: var(--cborder);
   transition: border-color 600ms ease;
+  filter: var(--cfilterBW);
 }
 
 .info-btn {
