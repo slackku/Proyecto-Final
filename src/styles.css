@@ -138,10 +138,6 @@ input.ng-invalid{
   border-color: var(--primary);
 }
 
-input.ng-valid{
-  border-color: var(--secundary);
-}
-
 input.ng-pristine.ng-invalid {
   border-color: var(--cborder);
 }

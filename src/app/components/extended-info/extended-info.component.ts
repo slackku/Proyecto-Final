@@ -188,14 +188,12 @@ export class ExtendedInfoComponent implements OnInit {
           } else {
             nombreImg = 'img-sample.png';
           }
-          console.log(f.value);
           obBuilded = new Proyectos(
             f.value.ffield,
             f.value.tfield,
             nombreImg,
             f.value.cfield
           );
-          console.log(obBuilded);
           this.personaService.addProyecto(obBuilded).subscribe((result) => {
             this.ngOnInit();
           });
@@ -232,7 +230,6 @@ export class ExtendedInfoComponent implements OnInit {
         this.handleProyectoEdit(objeto);
         break;
     }
-    console.log(this.modalService);
     this.modalService.open(contentEdit, {
       centered: true,
       backdrop: 'static',
@@ -349,7 +346,6 @@ export class ExtendedInfoComponent implements OnInit {
             this.editForm.value.fourth,
             this.editForm.value.id
           );
-          console.log('EDIT: ' + imgName);
           this.personaService.updateProy(proy).subscribe((result) => {
             this.ngOnInit();
           });
