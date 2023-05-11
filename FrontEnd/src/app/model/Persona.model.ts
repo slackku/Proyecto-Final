@@ -1,37 +1,36 @@
 import { Educacion } from './Educacion.model';
-import { Experiencia } from './Experiencia.model';
+import { Experiencias } from './Experiencias.model';
 import { Proyectos } from './Proyectos.model';
 
 export class Persona {
   id?: Number;
   nombre: String;
-  imgProfile: String;
-  imgBanner: String;
+  profileImg: String;
   email: String;
   pais: String;
   provincia: String;
   ocupacion: String;
   sobreMi: String;
   educacion: Array<Educacion>;
-  experiencias: Array<Experiencia>;
+  experiencias: Array<Experiencias>;
   proyectos: Array<Proyectos>;
 
   constructor(
     nombre: String,
-    imgProfile: String,
-    imgBanner: String,
+    profileImg: String,
     email: String,
     pais: String,
     provincia: String,
     ocupacion: String,
     sobreMi: String,
     educacion: Array<Educacion>,
-    experiencias: Array<Experiencia>,
-    proyectos: Array<Proyectos>
+    experiencias: Array<Experiencias>,
+    proyectos: Array<Proyectos>,
+    id?: Number
   ) {
+    this.id = id;
     this.nombre = nombre;
-    this.imgBanner = imgBanner;
-    this.imgProfile = imgProfile;
+    this.profileImg = profileImg;
     this.email = email;
     this.pais = pais;
     this.provincia = provincia;
