@@ -1,17 +1,16 @@
 <div>
     <div>
         <div class="banner-container"><img src="../assets/img/banner.png" alt="" class="banner"></div>
-        <!-- <img [src]="myPortfolio.mainInfo.bannerImage" alt="" class="banner"> -->
         <img src="../assets/img/img-sample.jpg" alt="" class="profile-img">
-        <!--  <img [src]="myPortfolio.mainInfo.profilePicture" alt="" class="profile-img"> -->
-        <button type="button" class="edit-profile btn-edit"><i class="fa-solid fa-pen-to-square"></i></button>
+        <button *ngIf="isSessionOn" type="button" (click)="openEditPersona(editPersona)"
+            class="edit-profile btn-edit fa-btn"><i class="fa-solid fa-pen-to-square"></i></button>
     </div>
-    <div class="info-btn c-padding-2">
-        <div class="info-main d-flex row pb-2">
-            <div class="col-md-5 col-sm-12">
-                <p class="header-color"> Ignacio Lorenzo</p>
-                <p class="sprof"><span>Full Stack Developer Jr</span></p>
-                <!-- <p class="swhr">{{myPortfolio.mainInfo.location}} ({{myPortfolio.mainInfo.country}})</p> -->
+    <div class="info-btn px-3">
+        <div class="info-main d-flex c-padding-2 row pb-2">
+            <div class="col-md-5 col-sm-12 p-0">
+                <p class="header-color">{{persona.nombre}}</p>
+                <p class="sprof"><span>{{persona.ocupacion}}</span></p>
+                <p class="swhr">{{persona.provincia}} ({{persona.pais}})</p>
             </div>
             <div
                 class="d-flex flex-md-column flex-sm-row col-md-7 col-12 justify-content-center customspacing mt-2 mt-md-0">
@@ -27,21 +26,64 @@
                 </div>
             </div>
         </div>
-        <div class="d-flex justify-content-center justify-content-md-start">
-            <div class="btn-group button-container" role="group" aria-label="Button group with nested dropdown">
-                <button type="button" class="btn">Intereses</button>
-                <button type="button" class="btn">Añadir</button>
-                <div class="btn-group" role="group">
-                    <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"
-                        alt="Desplegable">
-                        Más
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Opcion 1</a></li>
-                        <li><a class="dropdown-item" href="#">Opcion 2</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
     </div>
 </div>
+<ng-template #editPersona let-modal>
+    <div class="modal-header">
+        <h3 class="modal-title" id="modal-basic-title2">Editar</h3>
+        <button type="button" class="close fa-btn" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+    </div>
+    <div class="modal-body">
+        <form [formGroup]="editPersonForm" enctype="multipart/form-data">
+            <div class="form-group">
+                <div class="form-floating mb-2 input-group">
+                    <input type="text" formControlName="nombre" class="form-control" id="nombre"
+                        placeholder="Nombre Completo" required>
+                    <label for="nombre">Nombre Completo</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-floating mb-2 input-group">
+                    <input type="text" formControlName="titulo" class="form-control" id="titulo" placeholder="Título"
+                        required>
+                    <label for="titulo">Título</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-floating mb-2 input-group">
+                    <input type="text" formControlName="provincia" class="form-control" id="provincia"
+                        placeholder="Provincia" required>
+                    <label for="provincia">Provincia</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-floating mb-2 input-group">
+                    <input type="text" formControlName="pais" class="form-control" id="pais" placeholder="Pais"
+                        required>
+                    <label for="pais">Pais</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-floating mb-2 input-group">
+                    <input type="area" formControlName="sobremi" class="form-control" id="sobremi"
+                        placeholder="Sobre mi" required>
+                    <label for="sobremi">Sobre mi</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="mb-2 input-group">
+                    <input type="file" formControlName="profileImg" class="form-control " id="profileImg formFile"
+                        accept=".jpg, .png, .jpeg" (change)="uploadImage($event)">
+                    <label for="profileImg form-label"></label>
+                </div>
+            </div>
+            <p class="fs-6">{{message}}</p>
+            <div class="modal-footer">
+                <button data-dismiss="modal" class="btn btn-prim" (click)="submitChange()">Modificar</button>
+                <button type="button" class="btn btn-sec" (click)="modal.close('Save click')">Cerrar</button>
+            </div>
+        </form>
+    </div>
+</ng-template>
