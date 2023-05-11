@@ -1,32 +1,80 @@
 <div class="c-padding-2 c-margin-bottom-1">
-    <div class="d-flex justify-content-between">
+    <div class="d-flex align-items-center justify-content-between">
         <h3 class="header-color">Acerca de mí</h3>
-        <button *ngIf="isSessionOn" type="button" class="btn-edit fa-btn"><i
-                class="fa-solid fa-pen-to-square"></i></button>
     </div>
     <p>
         {{persona.sobreMi}}
     </p>
 </div>
 <div class="c-padding-2 c-margin-bottom-1">
-    <div class="d-flex justify-content-between">
+    <div class="d-flex align-items-center justify-content-between">
         <h3 class="header-color">Educacion</h3>
-        <button id="addEduc" data-type-edit="Agregar Educacion" *ngIf="isSessionOn" type="button" class="fa-btn"
-            data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-plus"></i></button>
+        <button id="addEduc" *ngIf="isSessionOn" type="button" data-add-type="1" (click)="open(content, $event)"
+            class="fa-btn">
+            <i class="fa-solid fa-plus" data-add-type="1"></i>
+        </button>
     </div>
     <div class="d-flex flex-column mt-2">
-        <div id="educacion">
+        <div class="educacion">
+            <ng-container *ngFor="let educacion of persona.educacion">
+                <div class="info-container">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <p>{{educacion.carrera}}</p>
+                            <p>{{educacion.nombreInst}}</p>
+                            <p>{{educacion.fecStart}}
+                                <span *ngIf="educacion.fecEnd.trim() != ''"> - {{educacion.fecEnd}}</span>
+                                <span *ngIf="educacion.fecEnd.trim() == '' "> - Actualidad</span>
+                            </p>
+                        </div>
+                        <div *ngIf="isSessionOn" class="d-flex flex-column my-auto du-container ms-2 gap-2">
+                            <button type='button' class='btn-edit fa-btn' data-edit-type="1"
+                                attr.index="{{educacion.idEduc}}" (click)="openEdit(contentEdit, $event, educacion)">
+                                <i class='fa-solid fa-pen-to-square' data-edit-type="1"
+                                    attr.index="{{educacion.idEduc}}"></i></button>
+                            <button type='button' data-delete-type="1" class='fa-btn' attr.index="{{educacion.idEduc}}"
+                                (click)="openDelete(contentDelete, $event, educacion)">
+                                <i class='fa-solid fa-trash' data-delete-type="1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
         </div>
     </div>
 </div>
 <div class="c-padding-2 c-margin-bottom-1">
-    <div class="d-flex justify-content-between">
+    <div class="d-flex align-items-center justify-content-between">
         <h3 class="header-color">Experiencia</h3>
-        <button id="addExp" data-type-edit="Agregar Experiencia" *ngIf="isSessionOn" type="button" class="fa-btn"
-            data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-plus"></i></button>
+        <button id="addExp" *ngIf="isSessionOn" type="button" (click)="open(content, $event)" class="fa-btn"
+            data-add-type="2"><i class="fa-solid fa-plus" data-add-type="2"></i>
+        </button>
     </div>
     <div class="d-flex flex-column mt-2">
-        <div id="experiencia">
+        <div class="experiencia">
+            <ng-container *ngFor="let experiencia of persona.experiencias">
+                <div class="info-container">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <p>{{experiencia.puesto}}</p>
+                            <p>{{experiencia.nombreEmp}}</p>
+                            <p>{{experiencia.fecStart}}<span *ngIf="experiencia.fecEnd.trim() != ''"> -
+                                    {{experiencia.fecEnd}}</span>
+                            </p>
+                        </div>
+                        <div *ngIf="isSessionOn" class="d-flex flex-column my-auto du-container ms-2 gap-2">
+                            <button type='button' class='btn-edit fa-btn' data-edit-type="2"
+                                attr.index="{{experiencia.idExp}}" (click)="openEdit(contentEdit, $event, experiencia)">
+                                <i class='fa-solid fa-pen-to-square' data-edit-type="2"
+                                    attr.index="{{experiencia.idExp}}"></i></button>
+                            <button type='button' class='fa-btn' data-delete-type="2" attr.index="{{experiencia.idExp}}"
+                                (click)="openDelete(contentDelete, $event ,experiencia)"><i class='fa-solid fa-trash'
+                                    data-delete-type="2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
         </div>
     </div>
 </div>
@@ -34,5 +82,158 @@
     <app-hard-soft-skills></app-hard-soft-skills>
 </div>
 <div class="c-padding-2 c-margin-bottom-1">
-    <app-proyects></app-proyects>
+    <div class="d-flex align-items-center justify-content-between">
+        <h3>Proyectos</h3>
+        <button id="addProy" *ngIf="isSessionOn" type="button" data-add-type="3" (click)="open(content, $event)"
+            class="fa-btn">
+            <i class="fa-solid fa-plus" data-add-type="3"></i>
+        </button>
+    </div>
+    <div *ngFor="let proyecto of persona.proyectos" class="info-container d-flex flex-column mt-2 col-lg mx-lg-1">
+        <div class="d-flex justify-content-between">
+            <div class="proyecto-info-container">
+                <p class="mb-1">{{proyecto.nombreProyecto}} ({{proyecto.fecStart}})</p>
+                <img class="proyect-img" src="../assets/img/{{proyecto.proyectImg}}">
+                <p class="mt-1">{{proyecto.descripcion}}</p>
+            </div>
+            <div *ngIf="isSessionOn" class="d-flex flex-column my-auto du-container ms-2 gap-2">
+                <button type='button' class='btn-edit fa-btn' data-edit-type="3" attr.index="{{proyecto.idProy}}"
+                    (click)="openEdit(contentEdit, $event, proyecto)"><i class='fa-solid fa-pen-to-square'
+                        data-edit-type="3" attr.index="{{proyecto.idProy}}"></i>
+                </button>
+                <button type='button' class='fa-btn' data-delete-type="3"
+                    (click)="openDelete(contentDelete, $event, proyecto)" attr.index="{{proyecto.idProy}}"><i
+                        class='fa-solid fa-trash' data-delete-type="3"></i>
+                </button>
+            </div>
+        </div>
+    </div>
 </div>
+<ng-template #content let-modal enctype="multipart/form-data">
+    <div class="modal-header">
+        <h3 class="modal-title" id="modal-basic-title">{{title}}</h3>
+        <button type="button" class="close fa-btn" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+    </div>
+    <div class="modal-body">
+        <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+            <div class="form-group">
+                <div class="form-floating mb-2 input-group">
+                    <input type="text" name="ffield" class="form-control" id="ffield" placeholder="Nombre"
+                        #ffield="ngModel" ngModel required>
+                    <label for="ffield">{{labels.ffield}}</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-floating mb-2 input-group" *ngIf="option != 3">
+                    <input type="text" name="sfield" class="form-control" id="sfield" placeholder="Nombre"
+                        #sfield="ngModel" ngModel [required]="isSFieldRequired">
+                    <label for="sfield">{{labels.sfield}}</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-floating mb-2 input-group">
+                    <input type="text" name="tfield" class="form-control" id="tfield" placeholder="Fecha"
+                        #tfield="ngModel" ngModel required>
+                    <label for="tfield">{{labels.tfield}}</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-floating mb-2 input-group">
+                    <input type="text" name="cfield" class="form-control" id="cfield" placeholder="Fecha"
+                        #cfield="ngModel" ngModel [required]="isCFieldRequired">
+                    <label for="cfield">{{labels.cfield}}</label>
+                </div>
+            </div>
+            <div class="form-group" *ngIf="option === 3">
+                <div class="mb-2 input-group">
+                    <input type="file" name="proyectImg" class="form-control" id="proyectImg formFile"
+                        #proyectImg="ngModel" ngModel accept=".jpg, .png, .jpeg" (change)="uploadImage($event)">
+                    <label for="proyectImg form-label"></label>
+                </div>
+            </div>
+            <p class="fs-6">{{message}}</p>
+            <div class="modal-footer">
+                <button data-dismiss="modal" class="btn btn-prim">Guardar</button>
+                <button type="button" class="btn btn-sec" (click)="modal.close('Save click')">Cerrar</button>
+            </div>
+        </form>
+    </div>
+</ng-template>
+
+<ng-template #contentEdit let-modal>
+    <div class="modal-header">
+        <h3 class="modal-title" id="modal-basic-title2">{{title}}</h3>
+        <button type="button" class="close fa-btn" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+    </div>
+    <div class="modal-body">
+        <form [formGroup]="editForm" enctype="multipart/form-data">
+            <div class="form-group">
+                <div class="form-floating mb-2 input-group">
+                    <input type="text" formControlName="id" class="form-control" id="id" placeholder="id"
+                        [readonly]="true" required>
+                    <label for="id">Id</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-floating mb-2 input-group">
+                    <input type="text" formControlName="first" class="form-control first" id="first"
+                        placeholder="Nombre" required>
+                    <label for="first">{{labels.ffield}}</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-floating mb-2 input-group">
+                    <input type="text" formControlName="second" class="form-control" id="second" placeholder="Nombre"
+                        required>
+                    <label for="second">{{labels.sfield}}</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-floating mb-2 input-group">
+                    <input type="text" formControlName="third" class="form-control" id="third" placeholder="Fecha"
+                        required>
+                    <label for="third">{{labels.tfield}}</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-floating mb-2 input-group">
+                    <input type="text" formControlName="fourth" class="form-control" id="fourth" placeholder="Fecha"
+                        required>
+                    <label for="fourth">{{labels.cfield}}</label>
+                </div>
+            </div>
+            <div class="form-group" *ngIf="option === 3">
+                <div class="mb-2 input-group">
+                    <input type="file" formControlName="proyectImg" class="form-control " id="proyectImg formFile"
+                        accept=".jpg, .png, .jpeg" (change)="uploadImage($event)">
+                    <label for="proyectImg form-label"></label>
+                </div>
+            </div>
+            <p class="fs-6">{{message}}</p>
+            <div class="modal-footer">
+                <button data-dismiss="modal" class="btn btn-prim" (click)="onSave()">Modificar</button>
+                <button type="button" class="btn btn-sec" (click)="modal.close('Save click')">Cerrar</button>
+            </div>
+        </form>
+    </div>
+</ng-template>
+
+<ng-template #contentDelete let-modal>
+    <div class="modal-header">
+        <h3 class="modal-title" id="modal-basic-title3">Eliminar</h3>
+        <button type="button" class="close fa-btn" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+    </div>
+    <div class="modal-body">
+        <p class="fs-6">¿Esta seguro que desea eliminarlo?</p>
+    </div>
+    <div class="modal-footer">
+        <button data-dismiss="modal" class="btn btn-prim" (click)="onDelete()">Aceptar</button>
+        <button type="button" class="btn btn-sec" (click)="modal.close('Save click')">Cerrar</button>
+    </div>
+</ng-template>

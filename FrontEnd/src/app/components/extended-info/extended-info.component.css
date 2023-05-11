@@ -1,0 +1,42 @@
+.info-tittle {
+  font-weight: bold;
+  margin-bottom: unset;
+}
+
+p {
+  margin: unset;
+}
+
+.proyecto-info-container {
+  width: 100%;
+}
+
+.proyecto-info-container img {
+  width: 100%;
+  object-fit: cover;
+  height: 12rem;
+}
+
+.educacion,
+.experiencia {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 0.7rem;
+}
+
+.proyect-img {
+  border-radius: 5px;
+  border: 1px solid var(--cborder);
+}
+
+#id[readonly=""],
+.imgName-readonly {
+  background-color: var(--wTrB);
+}
+
+@media (max-width: 450px) {
+  .educacion,
+  .experiencia {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
