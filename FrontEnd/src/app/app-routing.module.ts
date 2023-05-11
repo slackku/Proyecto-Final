@@ -14,6 +14,7 @@ const routes: Routes = [
     component: LoginPageComponent,
     pathMatch: 'full',
   },
+  { path: '**', component: HomePageComponent },
 ];
 
 @NgModule({
